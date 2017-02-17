@@ -23,8 +23,6 @@ import model.Vacinas;
  */
 public class AgendamentoDAO {
 
-// TESTE DE VERSÃO 
-    //TESTE DE VERSÃO 2
 
     private Connection conexao;
 
@@ -38,8 +36,8 @@ public class AgendamentoDAO {
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             //seta os valores
             stmt.setDate(1, new java.sql.Date(a.getDataDose().getTime()));
-            stmt.setInt(2, a.getIdPaciente().getId());
-            stmt.setInt(3, a.getIdVacinas().getId());
+            stmt.setInt(2, a.getPaciente().getId());
+            stmt.setInt(3, a.getVacinas().getId());
 
             //executa o código
             stmt.execute();
@@ -109,7 +107,7 @@ public class AgendamentoDAO {
 
     }
     
-    public int setID(Agendamento a) throws SQLException {
+    public int selectID(Agendamento a) throws SQLException {
         String query = "SELECT id FROM agendamento where id=" + a.getId();
         Statement st = conexao.createStatement();
         int id = 0;

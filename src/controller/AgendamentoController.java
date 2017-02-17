@@ -34,8 +34,8 @@ public class AgendamentoController {
             a.setDataDose(a.getDataDose());
             p.setId(p.getId());
             v.setId(v.getId());
-            a.setIdPaciente(p);
-            a.setIdVacinas(v);
+            a.setPaciente(p);
+            a.setVacinas(v);
             dao.cadastrarNovosAgendamentos(a);
             JOptionPane.showMessageDialog(panel, "Agendamento Cadastrado", "Warning", JOptionPane.INFORMATION_MESSAGE);
         } else {
@@ -50,7 +50,7 @@ public class AgendamentoController {
         AgendamentoDAO dao = new AgendamentoDAO();
 
         final JPanel panel = new JPanel();
-        if (a.getDataDose() != null && a.getId() == dao.setID(a)
+        if (a.getDataDose() != null && a.getId() == dao.selectID(a)
                 && a.isAtivo() != dao.setAtivo(a)) {
             a.setDataDose(a.getDataDose());
             dao.atualizarAgendamentoDia(a);
@@ -68,7 +68,7 @@ public class AgendamentoController {
         VacinasDAO daoVac = new VacinasDAO();
 
         final JPanel panel = new JPanel();
-        if (a.getDataDose() != null && a.getId() == dao.setID(a)
+        if (a.getDataDose() != null && a.getId() == dao.selectID(a)
                 && a.isAtivo() != dao.setAtivo(a) && v.getId() == daoVac.setID(v)
                 && v.isAtivo() != daoVac.setAtivo(v)) {
             a.setDataDose(a.getDataDose());
@@ -86,7 +86,7 @@ public class AgendamentoController {
 
         AgendamentoDAO dao = new AgendamentoDAO();
         final JPanel panel = new JPanel();
-        if (a.getId() == dao.setID(a) && a.isAtivo() != dao.setAtivo(a)) {
+        if (a.getId() == dao.selectID(a) && a.isAtivo() != dao.setAtivo(a)) {
             a.setId(a.getId());
             dao.excluirAgendamento(a);
             JOptionPane.showMessageDialog(panel, "Agendamento Apagado", "Warning", JOptionPane.INFORMATION_MESSAGE);
@@ -100,7 +100,7 @@ public class AgendamentoController {
 
         AgendamentoDAO dao = new AgendamentoDAO();
         final JPanel panel = new JPanel();
-        if (a.getId() == dao.setID(a) && a.isAtivo() != dao.setAtivo(a)) {
+        if (a.getId() == dao.selectID(a) && a.isAtivo() != dao.setAtivo(a)) {
             a.setId(a.getId());
             dao.buscarAgendamento(a);
         } else {
