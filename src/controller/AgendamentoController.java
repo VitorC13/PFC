@@ -24,6 +24,8 @@ public class AgendamentoController {
 
     public boolean inserirAgendamento(Vacinas v, Paciente p, Agendamento a) throws SQLException, ParseException {
 
+        // teste teste 2
+        
         AgendamentoDAO dao = new AgendamentoDAO();
         PacientesDAO daoPac = new PacientesDAO();
         VacinasDAO daoVac = new VacinasDAO();
