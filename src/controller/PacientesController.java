@@ -20,9 +20,12 @@ public class PacientesController {
 
     private PacientesDAO dao;
 
+    public PacientesController() throws SQLException {
+        this.dao = new PacientesDAO();
+    }
+    
     public boolean inserirPaciente(Paciente p) throws SQLException {
 
-        dao = new PacientesDAO();
         final JPanel panel = new JPanel();
         if (p.getNome() != null && p.getSobrenome() != null && p.getRg() != 0 && p.getCpf() != 0
                 && p.getEndereco() != null && p.getEmail() != null) {
@@ -43,10 +46,9 @@ public class PacientesController {
 
     public boolean atualizarPaciente(Paciente p) throws SQLException {
 
-        dao = new PacientesDAO();
         final JPanel panel = new JPanel();
         if (p.getNome() != null && p.getSobrenome() != null && p.getRg() != 0 && p.getCpf() != 0
-                && p.getEndereco() != null && p.getEmail() != null && p.getId() == dao.setID(p) && p.isAtivo() != dao.setAtivo(p)) {
+                && p.getEndereco() != null && p.getEmail() != null && p.getId() == dao.selectID(p) && p.isAtivo() != dao.setAtivo(p)) {
             p.getId();
             p.setNome(p.getNome());
             p.setSobrenome(p.getSobrenome());
@@ -65,9 +67,8 @@ public class PacientesController {
 
     public boolean excluirPaciente(Paciente p) throws SQLException {
 
-        dao = new PacientesDAO();
         final JPanel panel = new JPanel();
-        if (p.getId() == dao.setID(p) && p.isAtivo() != dao.setAtivo(p)) {
+        if (p.getId() == dao.selectID(p) && p.isAtivo() != dao.setAtivo(p)) {
             p.setId(p.getId());
             dao.excluirPaciente(p);
             JOptionPane.showMessageDialog(panel, "Paciente Apagado", "Warning", JOptionPane.INFORMATION_MESSAGE);
@@ -79,9 +80,8 @@ public class PacientesController {
 
     public boolean mostrarPaciente(Paciente p) throws SQLException {
 
-        dao = new PacientesDAO();
         final JPanel panel = new JPanel();
-        if (p.getId() == dao.setID(p) && p.isAtivo() != dao.setAtivo(p)) {
+        if (p.getId() == dao.selectID(p) && p.isAtivo() != dao.setAtivo(p)) {
             p.setId(p.getId());
             dao.buscarPaciente(p);
         } else {
@@ -92,9 +92,8 @@ public class PacientesController {
 
     public boolean resetarSenha(Paciente p) throws SQLException {
 
-        dao = new PacientesDAO();
         final JPanel panel = new JPanel();
-        if (p.getId() == dao.setID(p) && p.isAtivo() != dao.setAtivo(p)) {
+        if (p.getId() == dao.selectID(p) && p.isAtivo() != dao.setAtivo(p)) {
             p.setId(p.getId());
             dao.resetarSenha(p);
             JOptionPane.showMessageDialog(panel, "Senha Resatada", "Warning", JOptionPane.INFORMATION_MESSAGE);
