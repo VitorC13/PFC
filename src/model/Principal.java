@@ -48,8 +48,8 @@ public class Principal {
 
         VacinasController v = new VacinasController();
         Vacinas vac = new Vacinas();
-        vac.setDataValidade(new Date (2000 - 12 - 31));
-        vac.setDataFabricacao(new Date(2000 - 12 - 31));
+        //vac.setDataValidade(new Date (2000 - 12 - 31));
+        //vac.setDataFabricacao(new Date(2000 - 12 - 31));
         vac.setNome("Aasw");
         vac.setTipo("Bfsd");
         vac.setQuantidade(14523);
