@@ -106,7 +106,7 @@ public class VacinasDAO {
 
     }
 
-    public int setID(Vacinas v) throws SQLException {
+    public int selectID(Vacinas v) throws SQLException {
         String query = "SELECT id FROM vacinas where id=" + v.getId();
         Statement st = conexao.createStatement();
         int id = 0;

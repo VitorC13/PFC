@@ -113,7 +113,7 @@ public class PacientesDAO {
         }
     }
 
-    public int setID(Paciente p) throws SQLException {
+    public int selectID(Paciente p) throws SQLException {
         String query = "SELECT id FROM paciente where id=" + p.getId();
         Statement st = conexao.createStatement();
         int id = 0;

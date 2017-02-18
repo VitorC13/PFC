@@ -22,9 +22,15 @@ import model.Vacinas;
  */
 public class VacinasController {
 
+    VacinasDAO dao;
+
+    public VacinasController() throws SQLException {
+        this.dao = new VacinasDAO();
+    }
+    
     public boolean inserirVacina(Vacinas v) throws SQLException, ParseException {
 
-        VacinasDAO dao = new VacinasDAO();
+        
         final JPanel panel = new JPanel();
         if (v.getDataValidade() != null && v.getDataFabricacao() != null && v.getNome() != null
                 && v.getTipo() != null && v.getQuantidade() != 0 && v.getLote() != null) {
@@ -45,10 +51,9 @@ public class VacinasController {
 
     public boolean atualizarVacina(Vacinas v) throws SQLException {
 
-        VacinasDAO dao = new VacinasDAO();
         final JPanel panel = new JPanel();
         if (v.getDataValidade() != null && v.getDataFabricacao() != null && v.getNome() != null
-                && v.getTipo() != null && v.getQuantidade() != 0 && v.getLote() != null && v.getId() == dao.setID(v) && v.isAtivo() != dao.setAtivo(v)) {
+                && v.getTipo() != null && v.getQuantidade() != 0 && v.getLote() != null && v.getId() == dao.selectID(v) && v.isAtivo() != dao.setAtivo(v)) {
             v.getId();
             v.setDataValidade(v.getDataValidade());
             v.setDataFabricacao(v.getDataFabricacao());
@@ -67,9 +72,8 @@ public class VacinasController {
 
     public boolean excluirVacina(Vacinas v) throws SQLException {
 
-        VacinasDAO dao = new VacinasDAO();
         final JPanel panel = new JPanel();
-        if (v.getId() == dao.setID(v) && v.isAtivo() != dao.setAtivo(v)) {
+        if (v.getId() == dao.selectID(v) && v.isAtivo() != dao.setAtivo(v)) {
             v.setId(v.getId());
             dao.excluirVacinas(v);
             JOptionPane.showMessageDialog(panel, "Vacina Apagada", "Warning", JOptionPane.INFORMATION_MESSAGE);
@@ -81,9 +85,8 @@ public class VacinasController {
 
     public boolean mostrarVacina(Vacinas v) throws SQLException {
 
-        VacinasDAO dao = new VacinasDAO();
         final JPanel panel = new JPanel();
-        if (v.getId() == dao.setID(v) && v.isAtivo() != dao.setAtivo(v)) {
+        if (v.getId() == dao.selectID(v) && v.isAtivo() != dao.setAtivo(v)) {
             v.setId(v.getId());
             dao.buscarVacinas(v);
         } else {
