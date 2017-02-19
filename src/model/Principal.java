@@ -30,6 +30,8 @@ public class Principal {
         ConectaBancoDeDados.getConexaoMySQL();
         out.println(ConectaBancoDeDados.statusConection());
 
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        
         PacientesController p = new PacientesController();
 
         Paciente pac = new Paciente();
@@ -48,8 +50,10 @@ public class Principal {
 
         VacinasController v = new VacinasController();
         Vacinas vac = new Vacinas();
-        //vac.setDataValidade(new Date (2000 - 12 - 31));
-        //vac.setDataFabricacao(new Date(2000 - 12 - 31));
+        String data = "15/02/2017";
+        Date dataFinal = df.parse(data);
+        vac.setDataValidade(dataFinal);
+        vac.setDataFabricacao(new Date(2000 - 12 - 31));
         vac.setNome("Aasw");
         vac.setTipo("Bfsd");
         vac.setQuantidade(14523);
@@ -63,9 +67,9 @@ public class Principal {
         AgendamentoController a = new AgendamentoController();
         Agendamento ag = new Agendamento();
         
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        String data = "15/02/2017";
-        Date dataFinal = df.parse(data);
+        
+        /*String data = "15/02/2017";
+        Date dataFinal = df.parse(data);*/
         
         //LocalDate date = LocalDate.of(2000, 1, 15);
         //ag.setDataDose(new Date(22-3-1969));

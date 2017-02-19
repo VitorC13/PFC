@@ -34,8 +34,8 @@ public class VacinasDAO {
 
         try (PreparedStatement stmt = conexao.prepareStatement(sql)) {
             //seta os valores
-            stmt.setDate(1, (java.sql.Date) v.getDataValidade());
-            stmt.setDate(2, (java.sql.Date) v.getDataFabricacao());
+            stmt.setDate(1, new java.sql.Date(v.getDataValidade().getTime()));
+            stmt.setDate(2, new java.sql.Date(v.getDataFabricacao().getTime()));
             stmt.setString(3, v.getNome());
             stmt.setString(4, v.getTipo());
             stmt.setInt(5, v.getQuantidade());
