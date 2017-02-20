@@ -57,7 +57,7 @@ public class Principal {
         vac.setDataValidade(dataVali);
         
         //Setar Date Fabricacao
-        String dataFabricacao = "15/02/2017";
+        String dataFabricacao = "15/02/2016";
         Date dataFabri = df.parse(dataFabricacao);
         vac.setDataFabricacao(dataFabri);
         
