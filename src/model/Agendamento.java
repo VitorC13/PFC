@@ -62,6 +62,5 @@ public class Agendamento {
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
     }
-   
-
+ 
 }

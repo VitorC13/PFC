@@ -50,10 +50,17 @@ public class Principal {
 
         VacinasController v = new VacinasController();
         Vacinas vac = new Vacinas();
-        String data = "15/02/2017";
-        Date dataFinal = df.parse(data);
-        vac.setDataValidade(dataFinal);
-        vac.setDataFabricacao(new Date(2000 - 12 - 31));
+        
+        //Setar Date Validade
+        String dataValidade = "15/02/2017";
+        Date dataVali = df.parse(dataValidade);
+        vac.setDataValidade(dataVali);
+        
+        //Setar Date Fabricacao
+        String dataFabricacao = "15/02/2017";
+        Date dataFabri = df.parse(dataFabricacao);
+        vac.setDataFabricacao(dataFabri);
+        
         vac.setNome("Aasw");
         vac.setTipo("Bfsd");
         vac.setQuantidade(14523);
@@ -70,11 +77,12 @@ public class Principal {
         
         /*String data = "15/02/2017";
         Date dataFinal = df.parse(data);*/
-        
-        //LocalDate date = LocalDate.of(2000, 1, 15);
-        //ag.setDataDose(new Date(22-3-1969));
+        String dataAgendamento = "15/02/2017";
+        Date dataAgenda = df.parse(dataAgendamento);
+        ag.setDataDose(dataAgenda);
+       
         //ag.setId(3);
-        //a.inserirAgendamento(vac, pac, ag);
+        a.inserirAgendamento(vac, pac, ag);
         //a.atualizarAgendamentoDia(ag);
         //a.atualizarAgendamentoVacina(vac, ag);
         //a.excluirAgendamento(ag);
