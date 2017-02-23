@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/dao/AgendamentoDAO.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/model/Principal.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/controller/PacientesController.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/dao/PacientesDAO.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/conexaoBanco/ConectaBancoDeDados.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/controller/AgendamentoController.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/controller/VacinasController.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/dao/VacinasDAO.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/model/Vacinas.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/model/Paciente.java</file>
-            <file>file:/home/vitor/NetBeansProjects/PFC/src/model/Agendamento.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
